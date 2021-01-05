@@ -1,9 +1,6 @@
 # Polypharmacy Side Effect Prediction
 
-<object data="https://github.com/diitaz93/polypharm_predict/blob/main/images/pipeline_cont.pdf" type="application/pdf"> 
-</object>
-
-![alt text](https://github.com/diitaz93/polypharm_predict/blob/main/images/pipeline_cont.pdf "Pipeline")
+![alt text](https://github.com/diitaz93/polypharm_predict/blob/main/images/pipeline.png "Pipeline")
 
 1. Download data
 ```

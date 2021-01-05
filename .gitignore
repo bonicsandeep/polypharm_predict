@@ -16,7 +16,7 @@ results_training/
 data/data_structures/*
 
 # Results
-*.png
+
 
 # Compressed
 *.zip
