@@ -1,0 +1,23 @@
+Bootstrap: docker
+From: nvidia/cuda:9.0-cudnn7-devel
+
+%post
+
+    # Update list of available packages, then upgrade them
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
+
+    # Utility and support packages
+    apt-get install -y screen terminator tmux vim wget 
+    apt-get install -y aptitude build-essential cmake g++ gfortran git \
+        pkg-config python-pip python-dev software-properties-common
+    apt-get install -y unrar
+	
+	#Master-Thesis
+	wget https://raw.githubusercontent.com/diitaz93/polypharm_predict/main/requirements.txt
+	pip2 install --upgrade pip
+	pip install -r requirements.txt
+
+    # Clean up
+    apt-get -y autoremove
+    rm -rvf /var/lib/apt/lists/*

@@ -1,0 +1,6 @@
+Bootstrap: docker
+From: python:2.7
+
+%post
+wget https://raw.githubusercontent.com/diitaz93/polypharm_predict/main/requirements.txt
+pip install -r requirements.txt
