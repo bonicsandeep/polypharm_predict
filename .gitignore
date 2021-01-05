@@ -1,0 +1,32 @@
+# Custom
+*~
+*#
+
+# Datasets
+data/original_data/*
+*.xlsx
+*.tsv
+# Data structures
+TRAIN_*_
+PPI_BDM_*
+DDI_BDM_*
+DTI_BDM_*
+TRAIN_*
+results_training/
+data/data_structures/*
+
+# Results
+*.png
+
+# Compressed
+*.zip
+
+# Open office
+*.ods
+
+# Jupyter Notebook
+*.ipynb_checkpoints
+
+# Python
+*.pyc
+__pycache__/
