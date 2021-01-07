@@ -39,7 +39,7 @@ warnings.filterwarnings("ignore")
 with open(input_file, 'rb') as f:
     ddi_adj_list = pickle.load(f)['ddi_adj_list']
 print('\nInput data loaded\n')
-jobs = 32
+jobs = 16
 bdm = BDM(ndim=2, partition=PartitionRecursive)
 part = 'PartitionRecursive'
 # ============================================================================================= #
