@@ -17,6 +17,8 @@ data/data_structures/*
 
 # Results
 
+# Container images
+*.sif
 
 # Compressed
 *.zip
