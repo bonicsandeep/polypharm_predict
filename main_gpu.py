@@ -245,9 +245,13 @@ for epoch in range(FLAGS.epochs):
     output_data['epoch'] = epoch + 1
     with open(out_file,'wb') as f:
         pickle.dump(output_data, f, protocol=2)
-    
-# End of training. Metric structure handling   
+
 print("Optimization finished!")
+# Embedding and matrix export
+emb = sess.run(model.embeddings,feed_dict=feed_dict)
+RM = sess.run(model.latent_inters,feed_dict=feed_dict)
+D = sess.run(model.latent_varies,feed_dict=feed_dict)
+# Test metrics
 test_metrics = np.zeros([num_edge_types,3])
 for et in range(num_edge_types):
     i,j,k = minibatch.idx2edge_type[et]
@@ -268,6 +272,9 @@ output_data['train_time'] = train_time
 output_data['edge2name'] = edge2name
 output_data['drug2idx'] = drug2idx
 output_data['gene2idx'] = gene2idx
+output_data['RM'] = RM
+output_data['embeddings'] = embb
+output_data['D'] = D
 output_data['vms'] = memUse.vms
 output_data['rss'] = memUse.rss
 with open(out_file,'wb') as f:
