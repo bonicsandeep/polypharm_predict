@@ -16,7 +16,7 @@ fi
 
 if [ ! -d "data/original_data" ]; then	
     mkdir data/original_data
-    'data/original data folder created'
+    echo 'data/original data folder created'
 fi
 
 cd data/original_data
