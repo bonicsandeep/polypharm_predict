@@ -37,7 +37,7 @@ warnings.filterwarnings("ignore")
 with open(input_file, 'rb') as f:
     ppi_adj = pickle.load(f)['ppi_adj']
 print('\nInput data loaded\n')
-jobs = 32
+jobs = 16
 bdm = BDM(ndim=2, partition=PartitionRecursive)
 part = 'PartitionRecursive'
 # ============================================================================================= #
