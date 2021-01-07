@@ -66,3 +66,6 @@ or
 $ ./main_gpu.py <path_to_data_structure_file> 0 --epochs 50 --batch_size 512
 ```
 The performances of the model will be saved in the folder `results_training`.
+### Author
+Juan Sebastian Diaz<br>
+jsdb@kth.se
