@@ -3,6 +3,7 @@
 
 ```
 singularity build --fakeroot decagon.sif decagon.def
+<next command>
 ```
 
 
