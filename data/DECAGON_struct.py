@@ -65,7 +65,7 @@ n_se_mono = len(se_mono_name2idx)
 # IMPORT BDM
 if BDM:
     # PPI
-    PPI_file = './data_structures/BDM/PPI_BINBDM_real_genes_' + str(n_genes)
+    PPI_file = './data_structures/BDM/PPI_BINBDM_genes_' + str(n_genes)
     print('==== IMPORTED PPI VARIABLES ====')
     with open(PPI_file, 'rb') as f:
         PPI = pickle.load(f)
@@ -77,7 +77,7 @@ if BDM:
     print('PPI feature vector shape: ',np.shape(to_add_bdm_ppi),'\n')
     
     # DTI
-    DTI_file = './data_structures/BDM/DTI_BINBDM_real_genes_' + str(n_genes) + '_drugs_' +\
+    DTI_file = './data_structures/BDM/DTI_BINBDM_genes_' + str(n_genes) + '_drugs_' +\
                str(n_drugs)
     print('==== IMPORTED DTI VARIABLES ====')
     with open(DTI_file, 'rb') as f:
@@ -94,7 +94,7 @@ if BDM:
     print('DTI drug feature vector shape: ',np.shape(to_add_bdm_drugs_dti),'\n')
     
     # DDI
-    DDI_file = './data_structures/BDM/DDI_BINBDM_real_se_' + str(n_se_combo)  + '_drugs_' +\
+    DDI_file = './data_structures/BDM/DDI_BINBDM_se_' + str(n_se_combo)  + '_drugs_' +\
                str(n_drugs)
     print('==== IMPORTED DDI VARIABLES ====')
     with open(DDI_file, 'rb') as f:
