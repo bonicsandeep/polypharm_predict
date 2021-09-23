@@ -199,6 +199,7 @@ feed_dict = {}
 # ============================================================================================= #
 # TRAINING
 # Metric structures initialization
+pre_train_time = time.time()-start
 output_data={}
 out_file = 'results_training/TRAIN_'+words[2]+DSE*('_DSE_'+str(n_se_mono))+BDM*('_BDM')\
             +'_genes_'+str(n_genes)+'_drugs_'+str(n_drugs)+'_se_'+str(n_se_combo)+'_epochs_'+\
