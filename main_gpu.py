@@ -245,15 +245,18 @@ for epoch in range(FLAGS.epochs):
     output_data['epoch'] = epoch + 1
     with open(out_file,'wb') as f:
         pickle.dump(output_data, f, protocol=2)
-    
+# Save training parameters
+embb = sess.run(model.embeddings,feed_dict=feed_dict)
+RM = sess.run(model.latent_inters,feed_dict=feed_dict)
+D = sess.run(model.latent_varies,feed_dict=feed_dict)    
 # End of training. Metric structure handling   
 print("Optimization finished!")
 test_metrics = np.zeros([num_edge_types,3])
 for et in range(num_edge_types):
     i,j,k = minibatch.idx2edge_type[et]
     test_metrics[et,:] = get_accuracy_scores(
-            minibatch.test_edges[i,j][k], minibatch.test_edges_false[i,j][k], (i,j,k),
-            noise=bool(noise))
+        minibatch.test_edges[i,j][k], minibatch.test_edges_false[i,j][k], (i,j,k),
+        noise=bool(noise))
     print("Edge type=", edge2name[i,j][k])
     print("Edge type:", "%04d" % et, "Test AUROC score", "{:.5f}".format(test_metrics[et,0]))
     print("Edge type:", "%04d" % et, "Test AUPRC score", "{:.5f}".format(test_metrics[et,1]))
@@ -263,11 +266,15 @@ output_data['test_metrics'] = test_metrics
 memUse = ps.memory_info()
 print('Virtual memory:', memUse.vms*1e-09,'Gb')
 print('RSS Memory:', memUse.rss*1e-09,'Gb')
-train_time=time.time()-start
+train_time=time.time()-pre_train_time
+output_data['pre_train_time'] = pre_train_time
 output_data['train_time'] = train_time
 output_data['edge2name'] = edge2name
 output_data['drug2idx'] = drug2idx
 output_data['gene2idx'] = gene2idx
+output_data['RM'] = RM
+output_data['embeddings'] = embb
+output_data['D'] = D
 output_data['vms'] = memUse.vms
 output_data['rss'] = memUse.rss
 with open(out_file,'wb') as f:
