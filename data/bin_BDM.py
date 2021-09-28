@@ -76,10 +76,10 @@ print('The remove edge feature vector is filled in a ',sp_r*100,'%\n')
 output_data = {}
 output_data['nodebdm_ppi'] = bin_nodebdm_ppi
 output_data['rem_edgebdm_ppi'] = bin_rembdm_ppi
-output_data['vms_ppi'] = vms_ppi
-output_data['rss_ppi'] = rss_ppi
-output_data['time_ppi'] = time_ppi
-output_data['jobs_ppi'] = jobs_ppi
+#output_data['vms_ppi'] = vms_ppi
+#output_data['rss_ppi'] = rss_ppi
+#output_data['time_ppi'] = time_ppi
+#output_data['jobs_ppi'] = jobs_ppi
 # Compatibility with previous versions
 if 'partition_type' in locals():
     output_data['partition_type'] = partition_type
@@ -148,10 +148,10 @@ output_data['nodebdm_drugs_dti'] = bin_nodebdm_drugs_dti
 output_data['nodebdm_genes_dti'] = bin_nodebdm_genes_dti
 output_data['rem_edgebdm_drugs_dti'] = bin_rembdm_drugs_dti
 output_data['rem_edgebdm_genes_dti'] = bin_rembdm_genes_dti
-output_data['vms_dti'] = vms_dti
-output_data['rss_dti'] = vms_dti
-output_data['time_dti'] = time_dti
-output_data['jobs_dti'] = jobs_dti
+#output_data['vms_dti'] = vms_dti
+#output_data['rss_dti'] = vms_dti
+#output_data['time_dti'] = time_dti
+#output_data['jobs_dti'] = jobs_dti
 # Compatibility with previous versions
 if 'partition_type' in locals():
     output_data['partition_type'] = partition_type
@@ -201,10 +201,10 @@ print('The remove edge feature vectors are filled in average a ',rm*100,'%')
 output_data = {}
 output_data['nodebdm_ddi_list'] = bin_nodebdm_ddi_list
 output_data['rem_edgebdm_ddi_list'] = bin_rem_edgebdm_ddi_list
-output_data['vms_ddi'] = vms_ddi
-output_data['rss_ddi'] = rss_ddi
-output_data['time_ddi'] = time_ddi
-output_data['jobs_ddi'] = jobs_ddi
+#output_data['vms_ddi'] = vms_ddi
+#output_data['rss_ddi'] = rss_ddi
+#output_data['time_ddi'] = time_ddi
+#output_data['jobs_ddi'] = jobs_ddi
 # Compatibility with previous versions
 if 'partition_type' in locals():
     output_data['partition_type'] = partition_type
